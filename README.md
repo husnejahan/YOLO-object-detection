@@ -1,27 +1,14 @@
 # YOLO-object-detection
 
-DarkNet:It’s the official name for the YOLO framework.https://pjreddie.com/publications/
+Currently there are 3 main implementations of YOLO
 
-DarkFlow:is a Python implementation of the YOLO2 Object Detection system using TensorFlow as the backend.
+1. Darknet: (https://pjreddie.com/darknet/). This is the “official” implementation, created by the same people behind the algorithm. It is written in C with CUDA, hence it supports GPU computation. https://pjreddie.com/publications/
+
+2. AlexeyAB/darknet (https://github.com/AlexeyAB/darknet)
+
+3. Darkflow (https://github.com/thtrieu/darkflow/). This is port of Darknet to work over TensorFlow. DarkFlow is a Python implementation of the YOLO2 Object Detection system using TensorFlow as the backend.
 
 # Installation:
-
-# To create dataset
-
-(LabelImg is a graphical image annotation tool and label object bounding boxes in images)
-
-https://github.com/tzutalin/labelImg
-
-brew install qt 
-
-brew install libxml2
-
-make qt5py3
-
-python3 labelImg.py
-
-LabelImg is a graphical image annotation tool. It is written in Python and uses Qt for its graphical interface. Annotations are saved as XML files in PASCAL VOC format, the format used by ImageNet. Besdies, it also supports YOLO format
-
 
 mkdir darkflow
 
@@ -39,23 +26,40 @@ wget https://pjreddie.com/media/files/yolov2.weights cd
 
 cd darkflow/cfg
 
-# Training with custom images
+# # Training with custom images,Steps:
 
-Folder structure:
++ To create dataset
 
-+ darkflow
+(LabelImg is a graphical image annotation tool and label object bounding boxes in images)
 
-  + darkflow-master
+https://github.com/tzutalin/labelImg
+
+brew install qt 
+
+brew install libxml2
+
+make qt5py3
+
+python3 labelImg.py
+
+LabelImg is a graphical image annotation tool. It is written in Python and uses Qt for its graphical interface. Annotations are saved as XML files in PASCAL VOC format, the format used by ImageNet. Besdies, it also supports YOLO format
+
+
++ Folder structure:
+
+  + darkflow
+
+     + darkflow-master
   
-    + train
+       + train
    
-      + images
+         + images
     
-      + annotations
+         + annotations
 
 cp cfg/yolo.cfg cfg/yolo-new.cfg
 
-# modify cfg/yolo-new.cfg
++ modify configuration file: cfg/yolo-new.cfg
 
 vi cfg/yolo-new.cfg
 
@@ -69,7 +73,7 @@ vi cfg/yolo-new.cfg
 
 + Change height and width to 288 and 288 for faster training
 
-# In the darkflow/darkflow-master directory, execute the following line:
++ Training: In the darkflow/darkflow-master directory, execute the following line:
 
 python flow --model cfg/yolo_1_class.cfg --load yolov2.weights --train --annotation train/annotations --dataset train/images --epoch 500
    
