@@ -6,6 +6,18 @@ DarkFlow:is a Python implementation of the YOLO2 Object Detection system using T
 
 # Installation:
 
+# To create dataset
+brew install qt  # will install qt-5.x.x
+
+brew install libxml2
+
+make qt5py3
+
+python3 labelImg.py
+
+LabelImg is a graphical image annotation tool. It is written in Python and uses Qt for its graphical interface. Annotations are saved as XML files in PASCAL VOC format, the format used by ImageNet. Besdies, it also supports YOLO format
+
+
 mkdir darkflow
 
 cd darkflow
