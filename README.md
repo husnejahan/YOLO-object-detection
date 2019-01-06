@@ -6,8 +6,11 @@ DarkFlow:is a Python implementation of the YOLO2 Object Detection system using T
 
 # Installation:
 
-# To create dataset
-brew install qt  # will install qt-5.x.x
+# To create dataset(LabelImg is a graphical image annotation tool and label object bounding boxes in images)
+
+https://github.com/tzutalin/labelImg
+
+brew install qt 
 
 brew install libxml2
 
