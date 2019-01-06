@@ -26,9 +26,9 @@ wget https://pjreddie.com/media/files/yolov2.weights cd
 
 cd darkflow/cfg
 
-# # Training with custom images,Steps:
+# Training with custom images,Steps:
 
-+ To create dataset
+# To create dataset
 
 (LabelImg is a graphical image annotation tool and label object bounding boxes in images)
 
@@ -59,7 +59,7 @@ LabelImg is a graphical image annotation tool. It is written in Python and uses 
 
 cp cfg/yolo.cfg cfg/yolo-new.cfg
 
-+ modify configuration file: cfg/yolo-new.cfg
+# modify configuration file: cfg/yolo-new.cfg
 
 vi cfg/yolo-new.cfg
 
@@ -73,7 +73,10 @@ vi cfg/yolo-new.cfg
 
 + Change height and width to 288 and 288 for faster training
 
-+ Training: In the darkflow/darkflow-master directory, execute the following line:
+# Training: 
+In the darkflow/darkflow-master directory, execute the following line:
 
 python flow --model cfg/yolo_1_class.cfg --load yolov2.weights --train --annotation train/annotations --dataset train/images --epoch 500
-   
+
+# Testing:  
+
