@@ -30,11 +30,11 @@ Folder structure:
 
   + darkflow-master
   
-   + train
+    + train
    
-    + images
+      + images
     
-    + annotations
+      + annotations
 
 cp cfg/yolo.cfg cfg/yolo-new.cfg
 
@@ -48,11 +48,11 @@ vi cfg/yolo-new.cfg
 
 2. Under the section [region] there is a line to specify the number of classes (around line 244), we need to change it to classes=1 or the number of classes we have.
 
-Firstly at the top of file, need to change the batch size to 64 and subdivisions to 64 (they will be commented out)
++Firstly at the top of file, need to change the batch size to 64 and subdivisions to 64 (they will be commented out)
 
-Change height and width to 288 and 288 for faster training
++Change height and width to 288 and 288 for faster training
 
-In the darkflow/darkflow-master directory, execute the following line:
+# In the darkflow/darkflow-master directory, execute the following line:
 
 python flow --model cfg/yolo_1_class.cfg --load yolov2.weights --train --annotation train/annotations --dataset train/images --epoch 500
    
